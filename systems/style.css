@@ -1,0 +1,266 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+header{
+    font-family: Helvetica;
+    font-size: 12px;
+}
+
+body {
+    overflow: hidden;
+    overflow-x: hidden;
+}
+/* navbar */
+
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:transparent;
+    color: white;
+    z-index: 1;
+    width: 100%;
+}
+
+
+.logo {
+    max-height: 45px;
+    max-width: 200px;
+    margin: 1.5rem;
+}
+
+.navbar-links ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li{
+    list-style: none;
+    margin: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+
+.navbar-links li a{
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+
+.navbar-links li a:hover{
+    color: gray;
+}
+
+/* end navbar */
+
+/* hamburger */
+
+.toggle-button{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.bar{
+    margin-top: 10px;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.bar::before,
+.bar::after{
+    content:'';
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background-color: white;
+    transition: all .5s ease-in-out;
+   
+}
+
+/* hambuger animation */
+.bar::before{
+    transform: translateY(-10px);
+}
+
+.bar::after{
+    transform: translateY(10px);
+}
+
+.toggle-button.open .bar::before{
+    transform: translateY(0px);
+}
+
+.toggle-button.open .bar::after{
+    transform: translateY(0px);
+}
+/* end hambuger animation */
+
+
+
+
+/* end hamburger */
+
+/* toggle hamburger in mobile view */
+
+@media (max-width: 700px) {
+    .toggle-button{
+        display: flex;
+    }
+    .navbar-links{
+        align-items: center;
+        display: none;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links ul{
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbar-links{
+        text-align: center;
+    }
+    .navbar-links li a{
+        padding: .5rem;
+    }
+
+    .navbar-links.active{
+        display: flex;
+        margin-top: -40px;
+    }
+
+    .navbar.active{
+        background-color:rgba(255, 255, 255, 0.829);
+        backdrop-filter: blur(10px);
+    }
+
+}
+
+/* end toggle hamburger in mobile view */
+
+
+
+
+
+
+.container-scroll {
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+}
+
+
+section h1{
+    font-family: Helvetica;
+    font-size: 5vh;
+    color: white;
+    margin-left: 10vh;
+    margin-right: 10vh;
+    margin-bottom: 8px;
+    margin-top: 30%;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+section p{
+    font-family: Helvetica;
+    font-size: 2vh;
+    margin-left: 10vh;
+    margin-right: 10vh;
+    color: white;
+    /* text-shadow: 2px 2px 10px #0000007c; */
+    max-width: 600px;
+    line-height: 12pt;
+    animation-name: fade;
+    animation-duration: 5s;
+    
+}
+
+section#cardiovascular {
+    background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.52), rgb(0, 0, 0)),
+    url('../assets/cardio.jpg');
+    /* background: url("../assets/skeletal.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+section#skeletal {
+    background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.52), rgb(0, 0, 0)),
+    url('../assets/skeletal.jpg');
+    /* background: url("../assets/skeletal.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+section#muscular {
+    background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.52), rgb(0, 0, 0)),
+    url('../assets/muscular.jpg');
+    /* background: url("../assets/skeletal.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+section#integumentary {
+    background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.52), rgb(0, 0, 0)),
+    url('../assets/integumentary.jpg');
+    /* background: url("../assets/skeletal.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.image{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+}
+
+@keyframes fade {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
+
+
